@@ -8,6 +8,10 @@ app.get("/", function(req, res){
 	res.sendfile('index.html', { root: __dirname + "/public" } )
 })
 
+app.get("/Giants.mp3", function(req, res){
+	res.sendfile('Giants.mp3', { root: __dirname + "/public" } )
+})
+
 var port = process.env.PORT || 3001;
 app.listen(port);
 console.log("starting..." + port)
