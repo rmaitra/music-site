@@ -9983,6 +9983,10 @@ hr.light {
   border-radius: 10rem;
 }
 
+.youtube-video-place{
+  cursor:pointer;
+}
+
 .page-section {
   padding: 8rem 0;
 }
