@@ -7374,7 +7374,7 @@ button.bg-dark:focus {
 }
 
 .shadow {
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.5) !important;
 }
 
 .shadow-lg {
@@ -10052,6 +10052,7 @@ hr.light {
     color: #f4623a;
   }
 }
+
 .masthead-3 {
   padding-top: 10rem;
   padding-bottom: calc(10rem - 4.5rem);
