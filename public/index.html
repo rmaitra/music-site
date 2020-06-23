@@ -147,23 +147,24 @@
               <div class="row no-gutters">
                   <div class="col-lg-4 col-sm-6">
                       <a class="portfolio-box" href="img/portfolio/port1.jpg">
-                          <img class="img-fluid" src="img/portfolio/port1.jpg" alt="" />
+                          <img class="img-fluid lazy" src="" data-src="img/portfolio/port1.png" data-srcset="img/portfolio/port1.png" alt="" />
+
                           <div class="portfolio-box-caption">
                               <div class="project-category text-white-50">Mixing</div>
                           </div>
                       </a>
                   </div>
                   <div class="col-lg-4 col-sm-6">
-                      <a class="portfolio-box" href="img/portfolio/port2.jpg"
-                          ><img class="img-fluid" src="img/portfolio/port2.jpg" alt="" />
+                      <a class="portfolio-box" href="img/portfolio/port2.jpg">
+                          <img class="img-fluid lazy" src="" data-src="img/portfolio/port2.png" data-srcset="img/portfolio/port2.png" alt="" />
                           <div class="portfolio-box-caption">
                               <div class="project-category text-white-50">Composing</div>
                           </div></a
                       >
                   </div>
                   <div class="col-lg-4 col-sm-6">
-                      <a class="portfolio-box" href="img/portfolio/port4.jpg"
-                          ><img class="img-fluid" src="img/portfolio/port4.jpg" alt="" />
+                      <a class="portfolio-box" href="img/portfolio/port4.jpg">
+                          <img class="img-fluid lazy" src="" data-src="img/portfolio/port4.png" data-srcset="img/portfolio/port4.png" alt="" />
                           <div class="portfolio-box-caption">
                               <div class="project-category text-white-50">Chilling</div>
                           </div></a
@@ -284,5 +285,31 @@
               </div>
           </div>
       </section>
+      
+      <script>
+document.addEventListener("DOMContentLoaded", function() {
+var lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
+
+if ("IntersectionObserver" in window) {
+  let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        let lazyImage = entry.target;
+        lazyImage.src = lazyImage.dataset.src;
+        lazyImage.srcset = lazyImage.dataset.srcset;
+        lazyImage.classList.remove("lazy");
+        lazyImageObserver.unobserve(lazyImage);
+      }
+    });
+  });
+
+  lazyImages.forEach(function(lazyImage) {
+    lazyImageObserver.observe(lazyImage);
+  });
+} else {
+  // Possibly fall back to event handlers here
+}
+});
+      </script>
     </body>
 </html>
